@@ -36,6 +36,18 @@ def product(n, term):
     162
     """
     "*** YOUR CODE HERE ***"
+from operator import mul
+def product(n,term):
+    result = 1
+    i = 1
+    while i <= n:
+        result = mul(result,term(i))
+        i += 1
+    return result
+def identity(x):
+    return x
+def square(x):
+    return x*x
 
 
 def accumulate(fuse, start, n, term):
@@ -58,6 +70,7 @@ def accumulate(fuse, start, n, term):
     19
     """
     "*** YOUR CODE HERE ***"
+
 
 
 def summation_using_accumulate(n, term):
