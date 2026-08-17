@@ -136,6 +136,7 @@ def ten_pairs(n):
     """
     "*** YOUR CODE HERE ***"
 
+###测试
 
 def count_digit(n, digit):
     """Return how many times digit appears in n.
