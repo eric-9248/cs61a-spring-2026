@@ -17,7 +17,9 @@ def close(s: list[int], k: int) -> int:
     assert k >= 0
     count = 0
     for i in range(len(s)):  # Use a range to loop over indices
-        "*** YOUR CODE HERE ***"
+        val = s[i]
+        if abs(val - i)<+k:
+            count += 1
     return count
 
 
@@ -33,7 +35,7 @@ def close_list(s: list[int], k: int) -> list[int]:
     [2, 4, 3, 5]
     """
     assert k >= 0
-    return [___ for i in range(len(s)) if ___]
+    return [s[i] for i in range(len(s)) if abs(s[i] - i) <=k]
 
 
 def double_eights(n: int) -> bool:
@@ -58,6 +60,14 @@ def double_eights(n: int) -> bool:
     True
     """
     "*** YOUR CODE HERE ***"
+    def double_eight(n:int)->bool:
+        while n >0:
+            last = n%10
+            second_last = (n//10)%10
+            if last == 8 and second_last == 8:
+                return True
+            n=n//10
+        return False
 
 
 def make_onion(f, g):
