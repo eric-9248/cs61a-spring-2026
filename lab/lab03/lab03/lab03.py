@@ -96,11 +96,11 @@ def make_onion(f, g):
     """
     def can_reach(x, y, limit):
         if limit < 0:
-            return ____
+            return False
         elif x == y:
-            return ____
+            return True
         else:
-            return can_reach(____, ____, limit - 1) or can_reach(____, ____, limit - 1)
+            return can_reach(f(x), y, limit - 1) or can_reach(g(x), y, limit - 1)
     return can_reach
 
 
@@ -112,12 +112,12 @@ def make_func_repeater(f, x):
     >>> increment_repeater(5)
     6
     """
-    def repeat(____):
-        if ____:
-            return ____
+    def repeat(k):
+        if k==0:
+            return x
         else:
-            return ____
-    return ____
+            return f(repeat(k-1))
+    return repeat
 
 
 def ten_pairs(n):
@@ -135,6 +135,13 @@ def ten_pairs(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n<10:
+        return 0
+    last_digit=n%10
+    target=10-last_digit
+    return count_digit(n//10,target)+ten_pairs(n//10
+                                               )
+    
 
 def count_digit(n, digit):
     """Return how many times digit appears in n.
@@ -147,4 +154,12 @@ def count_digit(n, digit):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n=0:
+        return 0
+    if n%10==digit:
+        return 1+count_digit(n//10,digit)
+    else:
+        return count_digit(n//10,digit)
+
+         
 
